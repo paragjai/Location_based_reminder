@@ -1,4 +1,4 @@
-# Android Studio related APIs we should look into
+# Android Studio related APIs
 - Places API
 - Maps API
 - Direction API
