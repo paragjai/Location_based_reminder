@@ -1,0 +1,15 @@
+August 22nd
+1)Andoid Studio would be used.React Native would be difficult to learn and most of the time would be spent on learning,so discarded React Native.
+2)AWS RDS would be our cloud database.
+3)App data would be stored locally as well as synced to the cloud.(Vice-versa also).
+4)For the app to work,it needs to be connected to the Internet.(For creating a reminder too).
+5)Static Location for social network - Any friend can add items to my list.He doesn't get to see my real-time location.
+  Future enchancement - Dynamic Location 
+6)Basic feature of the app(Reminding a user if he is near the location) - a)Brute force approach of converting the current location
+to an address and cheecking it with all the user listed locations in the to-do list.b)Geofence
+7)Agreed to use slack and github.
+8)Nishant and Monish - Handling the UI.Rest of us working on the basic feature for now.
+
+Feasibility:
+1)No of API calls from the app is limited to 100 per day.
+2)Internet is needed for the app to work.
