@@ -14,5 +14,12 @@
 **Good source to learn Android Studio:**
 Vogella
 
+
+**Working code:**
+Recycler_view folder has basic working implementation of the list. 
+We can modify it depending on : 
+- Our design
+- Our requirements
+
 __Note__: All the APIs and technologies mentioned above could be things we can look into and use it according to our needs. They may or may not be useful.
 
