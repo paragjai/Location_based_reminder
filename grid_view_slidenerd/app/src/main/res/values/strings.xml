@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">grid_view_slidenerd</string>
+    <string-array name="picture_names">
+        <item>jenny_love1</item>
+        <item>jenny_love2</item>
+        <item>jenny_love3</item>
+        <item>jenny_love4</item>
+        <item>jenny_love5</item>
+    </string-array>
+</resources>
