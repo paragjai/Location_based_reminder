@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <ImageView
+        android:src="@drawable/jl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myDialogImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="I am Jennifer Lawrence 1"
+        android:id="@+id/myDialogText"
+        android:layout_below="@+id/myDialogImage"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="OK"
+        android:layout_alignLeft = "@id/myDialogImage"
+        android:layout_alignRight = "@id/myDialogImage"
+        android:id="@+id/button"
+        android:layout_below="@id/myDialogText"
+        android:layout_centerHorizontal="true"
+        android:onClick="closeDialog"/>
+
+</RelativeLayout>
