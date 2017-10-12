@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paragjain.firebaseauthentication.login">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:text="Login"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:id="@+id/textView"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/bLogin"
+        android:layout_alignStart="@+id/bLogin"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:textIsSelectable="false"/>
+
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:hint="Email"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:hint="Password"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp" />
+
+
+    <Button
+        android:id="@+id/bLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:onClick="login"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="341dp"
+        android:layout_marginTop="91dp"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/bSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:onClick="signUp"
+        android:layout_below="@+id/bLogin"
+        android:layout_alignLeft="@+id/bLogin"
+        android:layout_alignStart="@+id/bLogin" />
+
+
+</RelativeLayout>

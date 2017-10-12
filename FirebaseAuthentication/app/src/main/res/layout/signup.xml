@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paragjain.firebaseauthentication.login">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:text="Sign Up"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:id="@+id/textView"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:hint="Name"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:hint="Email"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:hint="Phone"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:hint="Password"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp" />
+
+
+    <Button
+        android:id="@+id/bSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:onClick="signUp"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="341dp"
+        android:layout_marginTop="91dp"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
