@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paragjain.volley.MainActivity">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/tvName"
+        android:text="Name"
+        android:layout_alignBottom="@+id/tvEmail"
+        android:layout_alignLeft="@+id/tvEmail"
+        android:layout_alignStart="@+id/tvEmail"
+        android:layout_marginBottom="63dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/tvEmail"
+        android:text="Email"
+        android:layout_alignBottom="@+id/tvPhoneNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/tvPhoneNumber"
+        android:text="Phone Number"
+        android:layout_above="@+id/bGetResponse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="66dp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bGetResponse"
+        android:text="Get Json Object Response"
+        android:onClick="getJsonObjectResponse"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="126dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bGetJsonArrayResponse"
+        android:text="Get Json Array Response"
+        android:onClick="getJsonArrayResponse"
+        android:layout_marginBottom="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/bGetResponse"
+        android:layout_alignEnd="@+id/bGetResponse" />
+
+</RelativeLayout>
