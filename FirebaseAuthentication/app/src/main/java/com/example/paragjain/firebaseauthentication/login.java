@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.net.URL;
+import java.util.HashMap;
+
 public class login extends Activity {
 
     public static final String TAG = login.class.getSimpleName();
@@ -45,10 +48,20 @@ public class login extends Activity {
     }
 
     public void login(View v){
-        String getEmail = email.getText().toString().trim();
-        String getPassword = password.getText().toString().trim();
+        String emailContent = email.getText().toString().trim();
+        String passwordContent = password.getText().toString().trim();
+        String secret = "fb943a2432995dc8114f15f868bbec305fac35b82e610286a2155e807cb577d4";
 
-        if(db.getUser(getEmail, getPassword))
+        HashMap<String, String> arguments = new HashMap<>();
+        arguments.put("email", emailContent);
+        arguments.put("password", passwordContent);
+        arguments.put("url", "http://locationreminder.azurewebsites.net/login");
+        arguments.put("secret", secret);
+
+        queryapi q = new queryapi(arguments);
+        q.execute();
+
+        if(1==1)//if(db.getUser(getEmail, getPassword))
         {
             session.setLoggedIn(true);
             startActivity(new Intent(login.this, listOfList.class));
