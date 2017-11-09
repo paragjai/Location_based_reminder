@@ -58,7 +58,7 @@ public class login extends Activity {
         arguments.put("url", "http://locationreminder.azurewebsites.net/login");
         arguments.put("secret", secret);
 
-        queryapi q = new queryapi(arguments);
+        QueryAPI q = new QueryAPI(arguments);
         q.execute();
 
         if(1==1)//if(db.getUser(getEmail, getPassword))
