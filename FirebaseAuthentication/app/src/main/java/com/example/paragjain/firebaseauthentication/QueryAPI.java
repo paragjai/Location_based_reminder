@@ -29,7 +29,7 @@ public class QueryAPI extends AsyncTask<URL, Integer, String> {
     String data = "";
     InputStream stream = null;
     HashMap<String, String> hm = null;
-
+    String result = null;
     public QueryAPI(HashMap<String,String> hm)
     {
         this.hm = hm;
@@ -64,7 +64,7 @@ public class QueryAPI extends AsyncTask<URL, Integer, String> {
 
             stream = urlConnection.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"), 8);
-            String result = reader.readLine();
+            result = reader.readLine();
 
             return result;
 

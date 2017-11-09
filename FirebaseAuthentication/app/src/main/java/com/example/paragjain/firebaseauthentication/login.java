@@ -12,9 +12,9 @@ import android.widget.Toast;
 import java.net.URL;
 import java.util.HashMap;
 
-public class login extends Activity {
+public class Login extends Activity {
 
-    public static final String TAG = login.class.getSimpleName();
+    public static final String TAG = Login.class.getSimpleName();
     private EditText email, password, name;
     private Button login, signup;
     private DbHelper db;
@@ -42,7 +42,7 @@ public class login extends Activity {
 
     public void signUp(View v){
         Log.d(TAG, "sign Up button clicked.");
-        Intent intent = new Intent(login.this, SignUp.class);
+        Intent intent = new Intent(Login.this, SignUp.class);
         finish();
         startActivity(intent);
     }
@@ -64,7 +64,7 @@ public class login extends Activity {
         if(1==1)//if(db.getUser(getEmail, getPassword))
         {
             session.setLoggedIn(true);
-            startActivity(new Intent(login.this, listOfList.class));
+            startActivity(new Intent(Login.this, listOfList.class));
             finish();
         }
         else
