@@ -67,7 +67,7 @@ public class SignUp extends Activity {
             arguments.put("password", passwordContent);
             arguments.put("secret", secret);
             arguments.put("url", "http://locationreminder.azurewebsites.net/signup");
-            QueryAPI q = new QueryAPI(arguments);
+            queryapi q = new queryapi(arguments);
             q.execute();
 
             /*

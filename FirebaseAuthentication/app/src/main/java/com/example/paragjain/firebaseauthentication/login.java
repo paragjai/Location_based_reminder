@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.net.URL;
 import java.util.HashMap;
 
-public class Login extends Activity {
+public class login extends Activity {
 
-    public static final String TAG = Login.class.getSimpleName();
+    public static final String TAG = login.class.getSimpleName();
     private EditText email, password, name;
     private Button login, signup;
     private DbHelper db;
@@ -42,7 +45,7 @@ public class Login extends Activity {
 
     public void signUp(View v){
         Log.d(TAG, "sign Up button clicked.");
-        Intent intent = new Intent(Login.this, SignUp.class);
+        Intent intent = new Intent(login.this, SignUp.class);
         finish();
         startActivity(intent);
     }
@@ -58,20 +61,27 @@ public class Login extends Activity {
         arguments.put("url", "http://locationreminder.azurewebsites.net/login");
         arguments.put("secret", secret);
 
-        QueryAPI q = new QueryAPI(arguments);
+        queryapi q = new queryapi(arguments);
         q.execute();
 
-        if(1==1)//if(db.getUser(getEmail, getPassword))
-        {
-            session.setLoggedIn(true);
-            startActivity(new Intent(Login.this, listOfList.class));
-            finish();
-        }
-        else
-        {
+        try {
+            JSONObject resultJSON = new JSONObject(q.result);
+            int status = resultJSON.getInt("status");
+            //ObjectMapper objectMapper = new ObjectMapper();
+            Log.w("status code result:", "val:" + status);;
+
+            if (status == 200)//if(db.getUser(getEmail, getPassword))
+            {
+                session.setLoggedIn(true);
+                startActivity(new Intent(login.this, listOfList.class));
+                finish();
+            } else {
                 Toast.makeText(getApplicationContext(), "Wrong email/password", Toast.LENGTH_SHORT).show();
+            }
+            // SEND QUERY TO THE DATABASE ( CLOUD ) and check if the user already exists or not
+        } catch (JSONException e){
+            e.printStackTrace();
         }
-        // SEND QUERY TO THE DATABASE ( CLOUD ) and check if the user already exists or not
     }
 
 
