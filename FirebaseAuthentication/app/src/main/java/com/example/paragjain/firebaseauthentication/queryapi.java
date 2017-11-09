@@ -17,7 +17,7 @@ import java.net.URL;
  * Created by Nikhil Prabhu on 11/7/2017.
  */
 
-public class queryapi extends AsyncTask<URL, Integer, String> {
+public class QueryAPI extends AsyncTask<URL, Integer, String> {
     String urlString = "";
     //String email;
     //String  name;
@@ -30,7 +30,7 @@ public class queryapi extends AsyncTask<URL, Integer, String> {
     InputStream stream = null;
     HashMap<String, String> hm = null;
 
-    public queryapi(HashMap<String,String> hm)
+    public QueryAPI(HashMap<String,String> hm)
     {
         this.hm = hm;
     }
