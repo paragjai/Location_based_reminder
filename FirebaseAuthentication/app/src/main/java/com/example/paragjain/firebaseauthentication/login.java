@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -19,7 +22,7 @@ public class login extends Activity {
     private Button login, signup;
     private DbHelper db;
     private Session session;
-
+    private static int status = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +36,14 @@ public class login extends Activity {
         login = (Button) findViewById(R.id.bLogin);
         signup = (Button) findViewById(R.id.bSignUp);
 
-        if(session.loggedin()){
+        status = getIntent().getIntExtra("logMeOut", 0);
+        Log.e("login Oops0:","" +status);
+        if(session.loggedin() && status==0){
             Intent intent = new Intent(this, listOfList.class);
             startActivity(intent);
             finish();
         }
+
     }
 
     public void signUp(View v){
@@ -59,18 +65,40 @@ public class login extends Activity {
         arguments.put("secret", secret);
 
         queryapi q = new queryapi(arguments);
-        q.execute();
+        try
+        {
+            String res= q.execute().get();
+            Log.w("check: ","val:"+res);
 
-        if(1==1)//if(db.getUser(getEmail, getPassword))
-        {
-            session.setLoggedIn(true);
-            startActivity(new Intent(login.this, listOfList.class));
-            finish();
-        }
-        else
-        {
+            JSONObject resultJSON = new JSONObject(res);
+            int status = resultJSON.getInt("status");
+            Log.w("status code result : ","val:"+ status);
+            if(status==200)//if(db.getUser(getEmail, getPassword))
+            {
+                session.setLoggedIn(true);
+                Intent it = new Intent(login.this, listOfList.class);
+
+                startActivity(it);
+
+                finish();
+            }
+            else
+            {
                 Toast.makeText(getApplicationContext(), "Wrong email/password", Toast.LENGTH_SHORT).show();
+            }
         }
+        catch(JSONException e)
+        {
+            Log.w("catch block: ","");
+            e.printStackTrace();
+        }
+        catch(Exception e)
+        {
+            Log.w("catch exception block: ","");
+            e.printStackTrace();
+        }
+
+
         // SEND QUERY TO THE DATABASE ( CLOUD ) and check if the user already exists or not
     }
 
