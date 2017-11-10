@@ -30,7 +30,7 @@ public class queryapi extends AsyncTask<URL, Integer, String> {
     String result="";
     InputStream stream = null;
     HashMap<String, String> hm = null;
-
+    String result = null;
     public queryapi(HashMap<String,String> hm)
     {
         this.hm = hm;
