@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/add_friend"
+            android:icon="@drawable/add_friend"
+            android:title="Add Friend" />
+        <item
+            android:id="@+id/view_friend"
+            android:icon="@drawable/view_friend"
+            android:title="View Friend" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:title="Logout" />
+          </group>
+
+
+</menu>
